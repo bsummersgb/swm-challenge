@@ -1,21 +1,39 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import List from './components/List';
+import axios from 'axios';
+
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { items: [] };
+  }
+
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <List names={this.state.names} />
       </div>
     );
   }
+
+  componentWillMount() {
+    var self = this;
+    axios.get('https://content.thewest.com.au/publication?kind=article')
+    .then(function (response) {
+      self.setState({
+        names: response.data.names
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
 }
 
 export default App;
