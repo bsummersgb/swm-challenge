@@ -92,6 +92,12 @@ p {
   grid-gap: 2em;
 }
 
+
+
+/* =================================
+  Styles for individual article transitions
+==================================== */
+
 .article_list {
   max-width: 80%;
   margin: 0 auto;
@@ -100,11 +106,6 @@ p {
 article img {
   max-width: 100%;
 }
-
-/* =================================
-  Styles for individual article transitions
-==================================== */
-
 
 .photo {
 	position: relative;
