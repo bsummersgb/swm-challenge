@@ -2,7 +2,7 @@
   "name": "swm-challenge",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://bsummersgb.github.io/swm-challenge",
   "dependencies": {
     "axios": "^0.17.0",
     "react": "^16.0.0",
