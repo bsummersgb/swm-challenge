@@ -1,28 +1,145 @@
-.App {
-  text-align: center;
+/* =================================
+  Base Element Styles
+==================================== */
+
+#root {
+  font: 1em/1.5 'Open Sans', sans-serif;
+  color: #373737;
+  background: #eaeaea;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+a {
+	text-decoration: none;
+  color: inherit;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Cheekily obtained logo styles. Thanks, SWM! :)  */
+
+.twa-masthead {
+    display: block;
+    margin: 0 auto;
+    margin-top: 3em;
+    padding: 0 0 1.25rem;
+    width: 100%;
+    background: #fff;
 }
 
-.App-title {
-  font-size: 1.5em;
+.twa-masthead-container {
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    max-width: 55.5625rem;
 }
 
-.App-intro {
-  font-size: large;
+.twa-masthead__logos {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.twa-masthead__logos .twa-masthead__link {
+    display: block;
+    width: 17.9375rem;
+}
+
+@media (min-width: 41.25em) {
+  .twa-masthead__logos .twa-masthead__link {
+      -webkit-box-flex: 3;
+      flex: 3 1 31.375rem;
+      max-width: 31.375rem;
+      width: auto;
+  }
+}
+
+@media (min-width: 48em) {
+  .twa-masthead-logo {
+      max-width: 31.3125rem;
+  }
+}
+
+main {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+h2 {
+	font-size: 1.3em;
+	line-height: 1.25em;
+	margin-top: .85em;
+	margin-bottom: .5em;
+}
+
+p {
+	font-size: .875em;
+	line-height: 1.4;
+	margin: 0 0 1.5em;
+}
+
+/* =================================
+  CSS Grid declarations
+==================================== */
+
+.grid {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2em;
+}
+
+.article_list {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+article img {
+  max-width: 100%;
+}
+
+/* =================================
+  Styles for individual article transitions
+==================================== */
+
+
+.photo {
+	position: relative;
+	overflow: hidden;
+}
+
+.photo-overlay {
+	color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	display: flex; /* For centering text inside .photo-overlay */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0, .5);
+
+  opacity: 0;
+	transition: opacity .5s;
+}
+
+.photo-overlay:hover {
+	opacity: 1;
+}
+
+.photo img {
+  transform-origin: bottom right;
+  transition: transform .5s;
+}
+
+.photo:hover img {
+  transform: scale(1.2);
 }
